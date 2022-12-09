@@ -1,5 +1,5 @@
 body{
-    background-color: black;
+    background-color: rgb(54, 52, 52);
 }
 
 .frame{
@@ -10,8 +10,8 @@ body{
     height: 400px;
     margin-top: -200px;
     margin-left: -200px;
-    border-radius: 2px;
-    box-shadow: 1px 2px 10px 0 rgba(0,0,0,0.1);
+    border-radius: 6px;
+    box-shadow: 1px 2px 10px 0 rgb(0, 0, 0);
     background: #43389f;
     background: -webkit-linear-gradient(bottom left, #43389f 0%, #4ec6ca 100%);
     background: -moz-linear-gradient(bottom left, #43389f 0%, #4ec6ca 100%);
@@ -43,7 +43,7 @@ body{
         width: 20px;
         background: #fff;
         border-radius: 3px;
-        transform: rotate(50dg);
+        transform: rotate(50deg);
         box-shadow: 0 0 13px 0 rgba(0,0,0,0.2);
     }
     .number .one-two{
