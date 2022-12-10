@@ -1,0 +1,92 @@
+body{
+    background-color: black;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap");
+
+.frame{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 4px;
+    box-shadow: 4px 8px 16px 0 rgb(0, 0, 0);
+    overflow: hidden;
+    background: rgb(58, 58, 58);
+    color: #000;
+    font-family: "Rubik Microbe", cursive;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+    opacity: 0;
+}
+input:checked + .hamburguer span{
+    background: rgb(255, 102, 0);
+    transition: background 0.5s ease, top 0.5s ease, transform 0.5s ease 0.5s;
+}
+input:checked + .hamburguer span:nth-child(1){
+    top: calc(50% - 4px);
+    transform: rotate(45deg);
+}
+input:checked + .hamburguer span:nth-child(2){
+    transform: scale(0);
+}
+input:checked + .hamburguer span:last-child{
+    top: calc(50% - 4px);
+    transform: rotate(-45deg);
+}
+input:checked ~ .menu{
+    transform: translate(-50%, -50%);
+}
+.hamburguer{
+    width: 65px;
+    height: 50px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+}
+.hamburguer span{
+    height: 8px;
+    border-radius: 4px;
+    background: rgb(255, 0, 0);
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    transition: background 0.5s ease, top 0.5s ease 0.5s, transform 0.5s ease;
+}
+.hamburguer span:last-child{
+    top: calc(100% - 7px);
+}
+.hamburguer span:nth-last-child(2){
+    top: calc(50% - 4px);
+    transition: transform 0.5 ease !important;
+}
+.menu{
+    position: absolute;
+    background: rgb(0, 0, 0);
+    width: 410px;
+    height: 410px;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 100%), -50%);
+    z-index: -1;
+    transition: transform 0.5s ease 0.5s;
+}
