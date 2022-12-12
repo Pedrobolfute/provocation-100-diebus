@@ -1,0 +1,384 @@
+
+
+:root{
+    --card-height: 55%;
+    --card-width: 70%;
+    --color-bg-frame: #42a7a1;
+    --color-bg-header: #f1ba64;
+    --color-bg-main: #fff;
+    --color-text-header: #fff;
+    --color-text-main-legend: #606060;
+    --color-text-main-days: #949494;
+    --color-text-chart-point-category-1: #fff;
+    --color-text-chart-point-category-2: #fff;
+    --color-chart-border: #f2f2f2;
+    --color-chart-category-1: #fa7373;
+    --color-chart-category-2: #7ba2ff;
+    --font-family-card: "Open Sans", Helvetica, sans-serif;
+    --font-size-card: 0.875em;
+    --font-size-smaller: 0.8em;
+    --font-size-small: 0.65em;
+    --font-weight-bold: 600;
+    --line-height-card: 1.3;
+    --width-chart-line: 0.15em;
+    --width-chart-dot-multiplier: 2.8;
+    --width-chart-dot-multiplier-mobile: 3.2;
+    --width-chart-dot-padding-multiplier: 1;
+    --width-chart-dot-padding-multiplier-mobile: 2;
+    --template-border: 1px solid var(--color-chart-border);
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+html{
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%
+}
+
+body{
+    background-color: #333;
+}
+.frame{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+    -moz-box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+    box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: var(--font-family-card);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg-frame);
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+.center{
+    position: absolute;
+    width: var(--card-width);
+    height: var(--card-height);
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+*, *::before, *::after{
+    -webkit-box-sizing: border-box;
+    -moz-boz-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.small{
+    font-size: var(--font-size-smaller);
+}
+
+.bold{
+    font-weight: var(--font-weight-bold);
+}
+
+.card-chart{
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    -moz-box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.3);
+    font-size: var(--font-size-card);
+    font-family: var(--font-family-card);
+    line-height: var(--line-height-card);
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: -webkit-min-content 1fr;
+    -ms-grid-rows: min-content 1fr;
+    grid-template-rows: -webkit-min-content 1fr;
+    grid-template-rows: min-content 1fr;
+    margin: 0;
+}
+
+.card-chart * {
+    white-space: nowrap;
+}
+
+.header{
+    background-color: var(--color-bg-header);
+    color: var(--color-text-header);
+    padding: 1em;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.header > * {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.header > *:last-child{
+    text-align: end;
+}
+
+.main{
+    background-color: var(--color-bg-main);
+    display: -webkit-box ;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-box-orient: vertical;
+    -moz-box-direnction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 1.2em 1em;
+
+}
+
+.legend{
+    color: var(--color-text-main-legend);
+    font-size: var(--font-size-small);
+    text-align: end;
+}
+
+.legend > * {
+    padding-left: 3.5em;
+    position: relative;
+}
+
+.legend > *:not(:last-child){
+    margin-right: 0.5em;
+}
+
+.legend > * ::before{
+    content: "";
+    position: absolute;
+    width: 1.3em;
+    height: 0.4em;
+    left: 1em;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+svg.category-1{
+    stroke: var(--color-chart-category-1);
+}
+
+.category-1::before{
+    background-color: var(--color-chart-category-1);
+}
+
+svg.category-2{
+    stroke: var(--color-chart-category-2);
+}
+
+.category-2::before{
+    background-color: var(--color-chart-category-2);
+}
+
+.chart{
+    position: relative;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -moz-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    border-top: var(--template-border);
+    border-bottom: var(--template-border);
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
+}
+
+.chart::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    border-top: var(--template-border);
+    -webkit-transform: translateY(-50%);
+    -moz-transoform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.chart > *{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.chart svg{
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: var(--width-chart-line);
+}
+
+.points > * {
+    position: absolute;
+    z-index: 1;
+    padding: -webkit-calc(var(--width-chart-line) * var(--width-chart-dot-multiplier) * var(--width-chart-dot-padding-multiplier));
+    padding: -moz-calc(var(--width-chart-line) * var(--width-chart-dot-multiplier) * var(--width-chart-dot-padding-multiplier));
+    cursor: pointer;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.points > *::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: -webkit-calc(var(--width-chart-line) * var(--width-chart-dot-multiplier));
+    height: -moz-calc(var(--width-chart-line) * var(--width-chart-dot-multiplier));
+    height: calc(var(--width-chart-line) * var(--width-chart-dot-multiplier));
+    width: -webkit-calc(var(--width-chart-line) * var(--width-chart-dot-multiplier));
+    width: -moz-calc(var(--width-chart-line) * var(--width-chart-dot-multiplier));
+    width: calc(var(--width-chart-line) * var(--width-chart-dot-multiplier));
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.points .tooltip{
+    --translate-base: translateX(-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: var(--translate-base) translateY(-100%);
+    -moz-transform: var(--translate-base) translateY(-100%);
+    -ms-transform: var(--translate-base) translateY(-100%);
+    -o-transform: var(--translate-base) translateY(-100%);
+    transform: var(--translate-base) translateY(-100%);
+    font-size: var(--font-size-smaller);
+    padding: 0.5em;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    border-radius: 0.3em;
+    visibility: hidden;
+    -webkit-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2 ease-out;
+    opacity: 0;
+
+}
+
+.points > *:hover .tooltip{
+    visibility: visible;
+    -webkit-transform: var(--translate-base) translateY(-140%);
+    -moz-transform: var(--translate-base) translateY(-140%);
+    -ms-transform: var(--translate-base) translateY(-140%);
+    -o-transform: var(--translate-base) translateY(-140%);
+    transform: var(--translate-base) translateY(-140%);
+    opacity: 1;
+}
+
+.points .tooltip::after{
+    content: "";
+    height: 0;
+    width: 0;
+    border-left: 0.5em solid transparent;
+    border-right: 0.5em solid transparent;
+    border-top: 0.5em solid transparent;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 100%);
+    -moz-transform: translate(-50%, 100%);
+    -ms-transform: translate(-50%, 100%);
+    -o-transform: translate(-50%, 100%);
+    transform: translate(-50%, 100%);
+}
+
+.points.category-1 .tooltip, .points.category-1 > *::before{
+    background-color: var(--color-chart-category-1);
+    color: var(--color-text-chart-point-category-1);
+}
+
+.points.category-1 .tooltip::after{
+    border-top-color: var(--color-chart-category-1);
+}
+
+.points.category-2 .tooltip, .points.category-2 > *::before{
+    background-color: var(--color-chart-category-2);
+    color: var(--color-text-chart-point-category-2);
+}
+
+.points.category-2 .tooltip::after{
+    border-top-color: var(--color-chart-category-2);
+}
+
+.days{
+    color: var(--color-text-main-days);
+    font-size: var(--font-size-small);
+    text-transform: uppercase;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+@media(hover: none) and (pointer: coarse){
+    :root{
+        --width-chart-dot-multiplier: var(--width-chart-dot-multiplier-mobile);
+        --width-chart-dot-padding-multiplier: var(var(--width-chart-dot-padding-multiplier-mobile))
+    }
+}
