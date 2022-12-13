@@ -2,7 +2,7 @@
 
 ## 001
 
-![001](/dia%23001/assets/img/001m.png)
+![001](/dia%23001/assets/img/001.png)
 
 ## 002
 
