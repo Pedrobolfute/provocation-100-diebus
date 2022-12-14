@@ -1,0 +1,164 @@
+:root{
+    --width-card: 350px;
+    --height-card: 350px;
+    --brown: #786450;
+}
+
+body{
+    background: linear-gradient(to right top, #edbd6b, #cb7e4f) no-repeat;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+    width: var(--width-card);
+    height: var(--height-card);
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    box-shadow: 12px 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+#left-side-card{
+    display: grid;
+    place-items: center;
+    grid-template-columns: calc(var(--width-card) / 1.6);
+    grid-template-rows: repeat(10, calc(var(--height-card) / 10));
+    grid-template-areas:
+    "."
+    "photo"
+    "photo"
+    "photo"
+    "name"
+    "job"
+    "."
+    "followbtn"
+    "messagebtn"
+    ".";
+}
+
+.circle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--brown);
+    border-radius: 50%;
+}
+
+.parent:hover{
+    transform: rotate(360deg);
+    transition: 3s;
+}
+
+.parent:hover > .child{
+    transform: rotate(-720deg);
+    transition: 3s;
+}
+
+.child:hover > #profile-photo{
+    transform: rotate(360deg);
+    transition: 3s;
+}
+
+#profile-photo{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 93%;
+    height: 93%;
+}
+
+.child{
+    border-left: 1px solid transparent;
+    width: 93%;
+    height: 93%;
+}
+
+.parent{
+    grid-area: photo;
+    width: calc(var(--width-card) / 4);
+    height: calc(var(--height-card) / 4);
+    border-right: 1px solid transparent;
+    cursor: pointer;
+}
+
+h1{
+    grid-area: name;
+    color: var(--brown);
+    font-size: 20px;
+    transform: translateY(10px);
+}
+
+h2{
+    grid-area: job;
+    color: var(--brown);
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.follow{
+    grid-area: followbtn;
+}
+
+.msg{
+    grid-area: messagebtn;
+}
+
+.btn{
+    background: transparent;
+    border: 1px solid var(--brown);
+    border-radius: 20px;
+    width: calc(var(--width-card) / 2.5);
+    height: 30px;
+    color: var(--brown);
+    font-weight: 700;
+    transition: .5s;
+}
+
+.btn:hover{
+    background: var(--brown);
+    color: white;
+    cursor: pointer;
+}
+
+#right-side-card{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 32% 1px 32% 1px 1fr;
+}
+
+#right-side-card div{
+    background: #e5d7ce;
+}
+
+.posts{
+    border-radius: 0px 5px 0px 0px;
+}
+
+.followers{
+    border-radius: 0px 0px 5px 0px;
+}
+
+.side-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--brown);
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.side-card span{
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.followers:hover{
+    background: white;
+    background-color: var(--brown);
+    cursor: pointer;
+}
