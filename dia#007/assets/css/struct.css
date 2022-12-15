@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
 
+body{
+  background-color: rgb(185, 145, 52);
+}
 .frame {
   position: absolute;
   top: 50%;
@@ -11,7 +14,7 @@
   border-radius: 10px;
 	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
 	overflow: hidden;
-  background: linear-gradient(30deg, rgb(105, 255, 243), rgb(98, 0, 255));
+  background: linear-gradient(30deg, rgb(105, 255, 243), rgba(98, 0, 255, 0.883));
   color: #333;
 	font-family: 'Open Sans', Helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
