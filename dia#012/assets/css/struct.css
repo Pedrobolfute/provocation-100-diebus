@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #286F8A;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #4CB6DE;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+}
+
+blockquote{
+  padding-top: 90px;
+  margin-top: 0px;
+  margin-inline: 30px;
+  font-size: 24px;
+  line-height: 36px;
+  color: #fff;
+  position: relative;
+}
+
+blockquote::before{
+  content: ",,";
+  font-family: Arial;
+  color: #6AC2E3;
+  font-size: 300px;
+  line-height: 30px;
+  position: absolute;
+  top: -30px;
+  left: -20px;
+  z-index: -1;
+}
+
+.tooltip{
+  display: inline-block;
+  background: #286F8A;
+  padding: 0 10px 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.info{
+  width: 300px;
+  font-size: 16px;
+  line-height: 20px;
+  display: inline-block;
+  position: absolute;
+  top: -140px;
+  left: 150%;
+  cursor: default;
+  opacity: 0;
+  transform: translate(-50%, -50px);
+  transition: .5s;
+}
+
+.tooltip:hover .info{
+  opacity: 1;
+  transform: translate(-50%, 0%);
+}
+
+.header{
+  background: #fff;
+  color: #286f8a;
+  display: block;
+  padding: 8px 15px;
+}
+
+.main{
+  background: #286F8A;
+  color: #fff;
+  display: block;
+  padding: 15px;
+}
+
+.main::after{
+  content: "";
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  background: #286F8A;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.author{
+  font-size: 20px;
+  font-weight: 100;
+  font-style: italic;
+  margin-top: 20px;
+}
