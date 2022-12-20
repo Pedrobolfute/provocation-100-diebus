@@ -1,0 +1,105 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: rgba(102, 154, 233, 0.36);
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 3px;
+  column-gap: 3px;
+  scale: 1;
+}
+
+.grid{
+  background: white;
+  background-blend-mode: darken;
+  display: flex;
+  transition: 0.5s;
+  justify-content: center;
+  align-items: center;
+  background-size: 100%;
+}
+
+.grid:before{
+  content: '+';
+  background: red;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  color: white;
+  font-size: 30px;
+  font-weight: 700;
+  border-radius: 50%;
+  box-shadow: 0 0 10px black;
+  justify-content: center;
+  align-items: center;
+  transform: scale(2);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.grid:hover:before{
+  opacity: 1;
+  transform: scale(1);
+  cursor: pointer;
+}
+
+.grid:hover{
+  background: #0000005c;
+  background-blend-mode: darken;
+}
+
+.grid:nth-child(1){
+  background-image:url(../img/1.jpg);
+  background-size: 150%;
+}
+
+.grid:nth-child(2){
+  background-image: url(../img/2.jpg);
+  background-size: 100%;
+}
+
+.grid:nth-child(3){
+  background-image: url(../img/3.png);
+  background-size: 100%;
+}
+
+.grid:nth-child(4){
+  background-image: url(../img/4.jpg);
+  background-size: 100%;
+}
+
+/*Unfineshed*/
+
+.anotherframe{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  background: none;
+  color: rgb(28, 27, 27);
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  z-index: 1;
+}
