@@ -1,0 +1,183 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #ffce4e;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #4b4841;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  perspective: 800px;
+}
+
+.center{
+  height: 180px;
+  width: 320px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+}
+
+.card, .front, .back{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: 2s;
+  border-radius: 5px;
+}
+
+.front{
+  background: #ffce4e;
+  box-shadow: 10px 10px 10px #00000061;
+}
+
+.back{
+  background: #ffce4e;
+  transform: rotateX(180deg);
+  z-index: 1;
+  opacity: 0;
+  transition: 2s;
+  box-shadow: 10px 10px 10px #00000061;
+}
+
+.center:hover .card{
+  transform: rotateX(180deg);
+}
+
+.center:hover .card .back{
+  opacity: 1;
+}
+
+img{
+  width: 130px;
+  height: 70px;
+  position: absolute;
+  top: 55px;
+  left: 95px;
+}
+
+.front svg{
+  position: absolute;
+  top: 122px;
+  left: 80px;
+  stroke-dasharray: 20 30;
+  stroke-linecap: round;
+  stroke-width: 3;
+  stroke: #4b4841;
+  stroke-dashoffset: 700;
+  animation: line 1s linear infinite;
+}
+
+.front svg:nth-child(2){
+  stroke-dasharray: 10 30;
+  animation: line 10s linear infinite reverse;
+}
+
+.front svg:nth-child(3){
+  stroke-dasharray: 3 10;
+  animation: line 20s linear infinite reverse;
+}
+
+.front img{
+  transform: scaleY(1.1);
+  transform-origin: bottom;
+  animation: cycle 0.3s linear infinite alternate;
+}
+
+.back img{
+  z-index: 1;
+  transform: translateY(-5px);
+  animation: heli 0.9s ease infinite;
+}
+
+.wind{
+  height: 3px;
+  width: 20px;
+  background: #4b4841;
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.windy{
+  position: absolute;
+  width: 160px;
+  height: 120px;
+  top: 30px;
+  left: 80px;
+  overflow: hidden;
+}
+
+.wind:nth-child(1){
+  position: absolute;
+  right: -100px;
+  top: 40px;
+  box-shadow: 0 20px #4b4841;
+  animation: winds 3s linear infinite;
+}
+
+.wind:nth-child(2){
+  position: absolute;
+  right: -200px;
+  top: 20px;
+  box-shadow: 0 20px #4b4841, 0 60px #4b4841, 0 80px #4b4841;
+  animation: winds 2s linear infinite;
+}
+
+.wind:nth-child(3){
+  position: absolute;
+  right: -100px;
+  top: 50px;
+  box-shadow: 0 40px #4b4841;
+  animation: winds 2.5s linear infinite;
+
+}
+
+.wind:nth-child(4){
+  position: absolute;
+  right: -100px;
+  top: 60px;
+  animation: winds 3.5s linear infinite;
+}
+
+@keyframes line{
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes cycle{
+  to{
+    transform: scaleY(1);
+  }
+}
+
+@keyframes winds{
+  to{
+    right: 180px;
+  }
+}
+
+@keyframes heli{
+  50%{
+    transform: translateY(5px);
+  }
+  100%{
+    transform: translateY(-5px);
+  }
+}
