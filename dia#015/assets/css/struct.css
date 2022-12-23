@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #333;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.3);
+  overflow: hidden;
+  background: linear-gradient(to top right, #3A92AF 0%, #5CA05A);
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background: white;
+  box-shadow: 10px 8px 16px 0 rgba(0,0,0,0.1);
+  height: 260px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+svg{
+  position: absolute;
+  top: 48px;
+  z-index: 4;
+  stroke: forestgreen;
+  stroke-dasharray: 310px;
+  stroke-dashoffset: 310px;
+  stroke-linecap: round;
+  animation: line 2s linear forwards;
+  display: none;
+}
+
+.topbar{
+  font-size: 16px;
+  width: 100%;
+  height: 50px;
+  border-bottom: solid 1px grey;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropbox{
+  position: relative;
+  height: 80px;
+  width: 100px;
+  border: dashed 2px grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 5px;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.names{
+  width: 100%;
+  height: 100%;
+}
+
+.center img{
+  width: 20%;
+  position: absolute;
+}
+
+.center img:nth-child(4){
+  display: none;
+  animation: spin 2s linear infinite;
+}
+
+.center img:nth-child(5){
+  transition: 1s;
+  opacity: 0;
+}
+
+.uploadbutton{
+  background: #6ECE3B;
+  height: 40px;
+  width: 140px;
+  position: absolute;
+  border-radius: 4px;
+  top: 190px;
+  box-shadow: 0 3px #09b11d;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+}
+
+.uploadbutton:hover{
+  box-shadow: 0 3px #09b11d, 0 0 15px -5px #09b11d;
+  cursor: pointer;
+}
+
+.droboxdrag{
+  background: #99999940;
+  border: dashed 2px black;
+}
+
+@keyframes spin{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes line{
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
