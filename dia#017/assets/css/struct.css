@@ -1,0 +1,76 @@
+body{
+  background-color: rgba(0, 115, 255, 0.492);
+}
+
+.frame{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px rgba(0,0,0,0.1);
+  background-color: #353535;
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.22) 0 20%,
+    rgba(244, 89, 89, 0.455) 20% 25%,
+    rgba(0, 0, 0, 0.351) 25% 45%,
+    rgba(244, 89, 89, 0.443) 45% 50%,
+    rgba(0, 0, 0, 0.317) 50% 70%,
+    rgba(244, 89, 89, 0.356) 70% 75%,
+    rgba(0, 0, 0, 0.23) 75% 95%,
+    rgba(244, 89, 89, 0.384) 95% 100% 
+  );
+  background-size: 50px 50px;
+  background-repeat: repeat;
+  overflow: hidden;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.281);
+  background: #353535;
+}
+
+svg{
+  width: 160px;
+  height: 140px;
+}
+
+.green{
+  fill: #eeeeee;
+  transition: all 0.5s ease-in-out;
+}
+
+.yellow{
+  fill: #cccccc;
+  transition: all 0.5s ease-in-out;
+}
+
+.red{
+  fill: #aaaaaa;
+  transition: all 0.5s ease-in-out;
+}
+
+svg:hover .green{
+  fill: #32c23ee0;
+}
+
+svg:hover .yellow{
+  fill: #d2e506d3;
+}
+
+svg:hover .red{
+  fill: #d0392ec1;
+}
