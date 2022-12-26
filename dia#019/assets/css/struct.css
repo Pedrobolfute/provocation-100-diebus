@@ -1,0 +1,72 @@
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 4px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  z-index: -2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.background{
+  z-index: -1;
+  position: absolute;
+  transition: 0.5s;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  height: 400px;
+  background: linear-gradient(to right, #009c3b 400px, #ffdf00 400px, #ffdf00 800px, #002776 800px, #002776 1200px);
+}
+
+input, input:focus{
+  appearance: none;
+  width: 50px;
+  height: 50px;
+  border: solid 2px white;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.circ{
+  z-index: 1;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 181px;
+  left: 123px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+
+input:nth-child(1):checked + input:nth-child(2) + input:nth-child(3) + .circ{
+  left: 123px;
+}
+
+input:nth-child(2):checked + input:nth-child(3) + .circ{
+  left: 181px;
+}
+
+input:nth-child(3):checked + .circ{
+  left: 239px;
+}
+
+input:nth-child(1):checked + input:nth-child(2) + input:nth-child(3) + .circ + .background{
+  left: 0px;
+}
+
+input:nth-child(2):checked + input:nth-child(3) + .circ + .background{
+  left: -400px;
+}
+
+input:nth-child(3):checked + .circ + .background{
+  left: -800px;
+}
