@@ -1,0 +1,166 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background: #aaa;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #2c3e50;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center{
+  --time:0.8s;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: #354A5F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.one{
+  --time:1.2s;
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  outline: solid 4px #354A5F;
+}
+
+svg{
+  top: 115px;
+  left: 140px;
+  width: 120px;
+  height: 70px;
+  stroke: white;
+  fill: transparent;
+  position: absolute;
+  stroke-dasharray: 300px;
+  stroke-dashoffset: 0px;
+  transition: 3s;
+}
+
+svg:nth-child(4){
+  top: 115px;
+  left: 140px;
+  width: 120px;
+  height: 110px;
+  stroke-dasharray: 350px;
+  stroke-dashoffset: 350px;
+}
+
+.button{
+  position: relative;
+  width: 200px;
+  height: 40px;
+  background: #ecf0f1;
+  color: #2c3e50;
+  border-radius: 20px;
+  top: 300px;
+  margin: auto;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transform: 2s;
+  z-index: 2;
+}
+
+.button:hover, .reset:hover{
+  background: #1abc9c;
+  color: #fff;
+}
+
+.reset{
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 40px;
+  background: #ecf0f1;
+  color: #2c3e50;
+  border-radius: 20px;
+  top: 260px;
+  margin: auto;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 1s;
+  opacity: 0;
+}
+
+.buttoneffect{
+  animation: rous 2s forwards;
+}
+
+.reseteffect{
+  animation: rouse 2s forwards;
+}
+
+.svg1effect{
+  left: 400px;
+  top: 50px;
+  transform: scale(0.5);
+  opacity: 0.3;
+}
+
+.centereffect{
+  animation: rou var(--time) forwards;
+}
+
+@keyframes rou{
+  10%{
+    transform: scale(1.2);
+  }
+  30%{
+    transform: scale(1.0);
+  }
+  50%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(0);
+  }
+}
+
+@keyframes rous{
+  70%{
+    width: 40px;
+    color: transparent;
+    transform: scale(0);
+  }
+  100%{
+    width: 40px;
+    color: transparent;
+    transform: scale(0);
+  }
+}
+
+@keyframes rouse{
+  100%{
+    opacity: 1;
+  }
+}
