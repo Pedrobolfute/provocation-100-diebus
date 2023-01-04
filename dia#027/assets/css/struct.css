@@ -1,0 +1,118 @@
+ @import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #1d1d1dea;
+}
+
+ .frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(44, 43, 43, 0.1);
+  overflow: hidden;
+  background: linear-gradient(90deg, #1d1d1d, #ff030347);
+  color: rgb(24, 23, 23);
+  font-family: 'open sans', Helvetica, sans-serif;
+  -webkit-font-smothing: antialiased;
+  -moz-osx-font-smothing: grayscale;
+ }
+
+ .center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+ .container{
+  background: rgb(215, 210, 210);
+  width: 180px;
+  height: 240px;
+  padding: 20px 30px;
+  border-radius: 5px;
+  box-shadow: 4px 10px 20px 0 rgba(0,0,0,0.1);
+ }
+
+ .datetime{
+  width: 100%;
+  display: block;
+  padding-bottom: 20px;
+  color: #365969;
+  border-bottom: 1px solid #D4DCE0;
+ }
+
+ .current-date{
+  position: relative;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+  text-align: center;
+ }
+
+ .current-time{
+  position: relative;
+  margin: 0;
+  font-size: 12px;
+  text-align: center;
+  line-height: 18px;
+ }
+
+ ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li{
+  margin: 0;
+  margin-top: 20px;
+  color: #365969;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+label{
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+
+input[type='checkbox']{
+  margin: 0;
+  width: 14px;
+  height: 14px;
+  border: 0.08em solid #365969;
+  border-radius: 50%;
+  transform: translateY(.2em);
+  display: grid;
+  place-content: center;
+}
+
+input[type='checkbox']::before{
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: .2s transform ease-in-out;
+  box-shadow: inset .7em .7em #365969;
+  transform-origin: center;
+  clip-path: polygon(14% 50%, 0 60%, 50% 100%, 100% 16%, 90% 0%, 45% 70%);
+}
+
+input[type='checkbox']:hcecked::before{
+  transform: scale(1);
+}
+
+input[type='checkbox']:checked + label{
+  text-decoration: line-through;
+  opacity: .5;
+}
