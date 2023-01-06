@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root{
+  --dark-purple: hsl(249, 26%, 14%);
+  --dark-gunmetal: hsl(249, 26%, 14%);
+  --eerie-black: hsl(248, 26%, 12%);
+  --cornsilk: hsl(39, 100%, 94%);
+  --rhythm: hsl(249, 22%, 55%);
+  --mantis: hsl(120, 51%, 57%);
+  --shadow: hsla(231, 18%, 35%, 0.1);
+  
+  font-size: 62.5%;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40rem;
+  height: 40rem;
+  margin-top: -20rem;
+  margin-left: -20rem;
+  border-radius: 0.2rem;
+  box-shadow: 0.8rem 0.8rem 1.6rem 0 var(--shadow);
+  overflow: hidden;
+  background-color: var(--dark-purple);
+  color: hsl(0, 0%, 13%);
+  font-family: "Inter", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.highlight{
+  display: inline-block;
+  padding-inline: 0.4rem;
+
+  font-weight: 500;
+  color: var(--dark-gunmetal);
+  background-color: var(--mantis);
+}
+
+.input-search {
+  position: relative;
+  width: 28rem;
+  border: none;
+  padding-inline: 2rem;
+  padding-block: 1.6rem;
+  font: inherit;
+  background-color: var(--eerie-black);
+  color: var(--cornsilk);
+  outline: none;
+  box-shadow: none;
+  transition: box-shadow 0.2s linear;
+}
+
+.input-search::placeholder{
+  color: var(--rhythm);
+}
+
+.input-search:focus{
+  box-shadow: inset 0 0 0 0.1rem var(--cornsilk);
+  transition: box-shadow 0.2s linear;
+}
+
+.input-search:focus ~ .input-autocomplete{
+  box-shadow: inset 0 0 0 0.1rem var(--cornsilk);
+  transition: box-shadow 0.2s linear;
+}
+
+.input-icon{
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5rem;
+  height: 100%;
+  font-size: 2.2rem;
+  color: var(--cornsilk);
+  cursor: pointer;
+}
+
+.input-autocomplete{
+  display: none;
+  position: absolute;
+  top: 6rem;
+  width: 100%;
+  padding: 2rem;
+  list-style: none;
+  background-color: var(--dark-gunmetal);
+  color: var(--rhythm);
+  font-size: 1.4rem;
+  box-shadow: inset 0 0 0 0.1 transparent;
+  transition: box-shadow 0.2s linear;
+}
+
+.input-autocomplete.active{
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.input-autocomplete li{
+  color: var(--rhythm);
+}
+
+.input-autocomplete li:hover{
+  font-weight: 600;
+  color: var(--cornsilk);
+}
