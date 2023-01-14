@@ -1,0 +1,48 @@
+body{
+  background-color: rgb(28, 28, 28);
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rbga(0,0,0,0.3);
+  overflow: hidden;
+  background: #dc3d52;
+  color: #fff;
+  cursor: pointer;
+}
+
+.logo{
+  position: absolute;
+  top: 160px;
+  left: 165px;
+}
+
+.logo.white svg{
+  fill: #fff;
+}
+
+.logo.purple svg{
+  fill: #dc3d52;
+}
+
+.logo.small{
+  transform: scale(0);
+  transition: all .5s ease-in;
+}
+
+.logo.normal{
+  transform: scale(1);
+  transition: all .5s ease-out .3s;
+}
+
+.logo.big{
+  transform: scale(10);
+  transition: all .5s ease-in;
+}
