@@ -11,108 +11,122 @@
 <body>
   <div class="frame">
     <div class="center">
-      <div class="tabs">
-        <div class="top"></div>
-
-        <input type="radio" id="tab-1" name="rd" checked="checked"/>
-        <label for="tab-1" class="tab"><span class="fa fa-eye"></span>
-        </label>
-
-        <input type="radio" id="tab-2" name="rd"/>
-        <label for="tab-2" class="tab">
-          <span class="fa fa-comments"></span>
-        </label>
-
-        <input type="radio" id="tab-3" name="rd"/>
-        <label for="tab-3" class="tab">
-          <span class="fa fa-bell"></span>
-        </label>
-
-        <input type="radio" id="tab-4" name="rd"/>
-        <label for="tab-4" class="tab">
-          <span class="fa fa-cog"></span>
-        </label>
-
-        <label class="tab search">
-          <span class="fa fa-search"></span>
-        </label>
-
-        <div class="content">
-          <div class="box" id="box-1">
-            <h1>Dashboard</h1>
-            <p>
-              <span style="width: 250px;"></span>
-              <span style="width: 270px;"></span>
-              <span style="width: 235px;"></span>
-              <span style="width: 260px;"></span>
-              <span style="width: 53px;"></span>
-            </p>
-            <p>
-              <span style="width: 262px;"></span>
-              <span style="width: 234px;"></span>
-              <span style="width: 246px;"></span>
-              <span style="width: 260px;"></span>
-              <span style="width: 144px;"></span>
-            </p>
-          </div>
-
-          <div class="box" id="box-2">
-            <h1>Comments</h1>
-            <p>
-              <span style="width: 250px;"></span>
-              <span style="width: 270px;"></span>
-              <span style="width: 235px;"></span>
-              <span style="width: 260px;"></span>
-              <span style="width: 53px;"></span>
-            </p>
-            <p>
-              <span style="width: 262px;"></span>
-              <span style="width: 234px;"></span>
-              <span style="width: 246px;"></span>
-              <span style="width: 260px;"></span>
-              <span style="width: 144px;"></span>
-            </p>
-          </div>
-
-          <div class="box" id="box-3">
-            <h1>Notifications</h1>
-            <p>
-              <span style="width: 250px;"></span>
-              <span style="width: 270px;"></span>
-              <span style="width: 235px;"></span>
-              <span style="width: 260px;"></span>
-              <span style="width: 53px;"></span>
-            </p>
-            <p>
-              <span style="width: 262px;"></span>
-              <span style="width: 234px;"></span>
-              <span style="width: 246px;"></span>
-              <span style="width: 260px;"></span>
-              <span style="width: 144px;"></span>
-            </p>
-          </div>
-
-          <div class="box" id="box-4">
-            <h1>Settings</h1>
-            <p>
-              <span style="width: 250px;"></span>
-              <span style="width: 270px;"></span>
-              <span style="width: 235px;"></span>
-              <span style="width: 260px;"></span>
-              <span style="width: 53px;"></span>
-            </p>
-            <p>
-              <span style="width: 262px;"></span>
-              <span style="width: 234px;"></span>
-              <span style="width: 246px;"></span>
-              <span style="width: 260px;"></span>
-              <span style="width: 144px;"></span>
-            </p>
-          </div>
-
+      <header>
+        <div class="left-panel">
+          <input type="radio" value="1" name="tab-select" id="tab-dashboard" data-target="#content-dashboard" checked/>
+            <label class="dashboard tab" for="tab-dashboard">
+              <span class="material-symbols-outlined">
+                visibility
+              </span>
+            </label>
+          <input type="radio" value="2" name="tab-select" id="tab-comments" data-target="#content-comments" />
+            <label class="comments tab" for="tab-comments">
+              <span class="material-symbols-outlined">
+                forum
+              </span>
+            </label>
+          <input type="radio" value="3" name="tab-select" id="tab-notifications" data-target="#content-notifications" />
+            <label class="notifications tab" for="tab-notifications">
+              <span class="material-symbols-outlined">
+                notifications
+              </span>
+            </label>
+          <input type="radio" value="4" name="tab-select" id="tab-settings" data-target="#content-settings" />
+            <label class="settings tab" for="tab-settings">
+              <span class="material-symbols-outlined">
+                settings
+              </span>
+            </label>
         </div>
-      </div>
+        <div class="right-panel">
+          <input type="radio" id="tab-search"/>
+          <label class="search">
+            <span class="material-symbols-outlined">
+              search
+            </span>
+          </label>
+        </div>
+      </header>
+      <section class="content active" id="content-dashboard">
+        <article class="first article">
+          <h1 class="heading"> Dashboard </h1>
+          <p>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+          </p>
+          <p>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+          </p>
+        </article>
+      </section>
+      <section class="content" id="content-comments">
+        <article class="first article">
+          <h1 class="heading"> Comments </h1>
+          <p>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+          </p>
+          <p>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+          </p>
+        </article>
+      </section>
+      <section class="content" id="content-notifications">
+        <article class="first article">
+          <h1 class="heading"> Notifications </h1>
+          <p>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+          </p>
+          <p>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+          </p>
+        </article>
+      </section>
+      <section class="content" id="content-settings">
+        <article class="first article">
+          <h1 class="heading"> Settings </h1>
+          <p>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+          </p>
+          <p>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+            <span class="redacted"></span>
+          </p>
+        </article>
+      </section>
+
     </div>
   </div>
+
+  <script src="/assets/js/event.js"></script>
 </body>
 </html>

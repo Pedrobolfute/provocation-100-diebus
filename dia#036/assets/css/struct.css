@@ -1,5 +1,13 @@
-@import url(https://100dayscss.com/codepen/css/font-awesome.min.css);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0);
+
+:root{
+  --lightGrey: #e9e9e9;
+  --backgroundBlueGrey: #2b3642;
+  --darkerBlue: #3d4d5e;
+  --facebookBlue: #5da2ed;
+  --icongrey: #8398ad;
+}
 
 .frame{
   position: absolute;
@@ -10,9 +18,10 @@
   margin-top: -200px;
   margin-left: -200px;
   border-radius: 2px;
-  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
   overflow: hidden;
-  background: #2b3642;
+  background-color: var(--backgroundBlueGrey);
+  color: #333;
   font-family: 'Open Sans', Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,101 +29,181 @@
 
 .center{
   position: absolute;
-  width: 320px;
-  height: 240px;
-  top: 80px;
-  left: 40px;
-  background: #fff;
-  box-shadow: 4px 8px 12px 0 rgba(0,0,0,0.3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
 }
 
-.center .top{
-  position: absolute;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 40px;
-  background: #3d4d5e;
+header{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 16%;
+  background-color: var(--darkerBlue);
 }
 
-.center input[type="radio"]{
-  display: none;
+header .left-panel{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  height: 100%;
 }
 
-.center .tab{
-  position: relative;
-  float: left;
-  z-index: 5;
-  width: 40px;
-  height: 40px;
-  text-align: center;
-  line-height: 38px;
-  color: #8398ad;
+header .left-panel > *{
+  width: 12.5%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+label{
   cursor: pointer;
-  font-size: 14px;
-  transition: background .5s ease-in-out;
 }
 
-.center .tab.search{
-  float: right;
+label:hover > span{
+  color: white;
 }
 
-.center .tab:hover{
-  color: #fff;
+input:checked + label{
+  background-color: var(--facebookBlue);
 }
 
-.center input[type="radio"]:checked + .tab{
-  background: #5da2ed;
-  color: #fff;
+input:checked + label > span{
+  color: white;
 }
 
-.center .content{
+input{
   position: absolute;
-  top: 40px;
-  color: #000;
+  left: -9999px;
 }
 
-.center .content .box{
+span{
+  color: var(--icongrey);
+}
+
+header .right-panel{
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-symbols-outlined{
+  transform: scale(0.7);
+}
+
+.content{
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transform: translateY(3px);
-  pointer-events: none;
-  padding: 25px;
-  transition: all .3s ease-in;
+  left: -9999px;
 }
 
-.center .content .box h1{
-  font-weight: 400;
-  font-size: 16px;
-  color: #415868;
+.content.active{
+  background-color: white;
+  height: 84%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  left: auto;
+}
+
+.content > .heading{
+  position: absolute;
+  text-align: left;
+  width: 80%;
+  height: 10%;
+  margin-bottom: 3%;
+  font-size: 18px;
+  font-weight: 300;
+  position: relative;
+}
+
+.heading{
+  position: absolute;
+  text-align: left;
+  width: 80%;
+  height: 10%;
+  margin-bottom: 9%;
+  margin-left: 3%;
+  font-size: 18px;
+  font-weight: 700;
+  position: relative;
+}
+
+.article{
   margin: 0;
-  padding: 0;
+  height: 33.34%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.center .content .box p{
-  margin: 17px 0;
+h1{
+  margin: 0;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  font-weight: 300;
+  font-size: 16px;
 }
 
-.center .content .box p span{
-  display: block;
-  height: 4px;
-  background: #e9e9e9;
-  margin: 6px 0;
+p{
+  margin: 0;
+  margin-bottom: 5%;
 }
 
-#tab-1:checked ~ .content #box-1,
-#tab-2:checked ~ .content #box-2,
-#tab-3:checked ~ .content #box-3,
-#tab-4:checked ~ .content #box-4{
-  pointer-events: all;
+.content > article{
+  opacity: 0;
+  position: absolute;
+  transition: opacity 1s, top 1s;
+}
+
+.content.active > article{
   opacity: 1;
-  transform: translateY(0);
-  transition: all .5s ease-out;
+  position: relative;
+  top: 0%;
 }
 
-.fa-eye{
+.redacted{
+  display: block;
+  background-color: var(--lightGrey);
+  height: 4px;
+  margin-bottom: 7px;
+}
 
+article p:nth-child(2) > .redacted:first-child{
+  width: 90%;
+}
+
+article p:nth-child(2) > .redacted:nth-child(3){
+  width: 85%;
+}
+
+article p:nth-child(2) > .redacted:nth-child(3){
+  width: 85%;
+}
+
+article p:nth-child(2) > .redacted:nth-child(4){
+  width: 97%;
+}
+
+article p:nth-child(2) > .redacted:nth-child(5){
+  width: 35%;
+}
+
+article p:nth-child(3) > .redacted:nth-child(2){
+  width: 85%;
+}
+
+article p:nth-child(3) > .redacted:nth-child(3){
+  width: 55%;
+}
+
+article p:nth-child(3) > .redacted:nth-child(5){
+  width: 95%;
 }

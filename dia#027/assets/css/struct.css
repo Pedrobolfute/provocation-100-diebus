@@ -108,7 +108,7 @@ input[type='checkbox']::before{
   clip-path: polygon(14% 50%, 0 60%, 50% 100%, 100% 16%, 90% 0%, 45% 70%);
 }
 
-input[type='checkbox']:hcecked::before{
+input[type='checkbox']:checked::before{
   transform: scale(1);
 }
 
