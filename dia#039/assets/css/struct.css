@@ -1,0 +1,110 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #333;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #0000008f;
+  color: #333;
+  font-family: 'Open-Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-radius: 5px;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center nav{
+  display: flex;
+  height: 50px;
+  color: #ffffff;
+  width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  transition: width 0.3s linear, height 0.3s 0.3s linear;
+  position: relative;
+  cursor: pointer;
+}
+
+.center nav .menuItem{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.center nav:after{
+  content: '';
+  display: block;
+  border-top: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.center nav.show:after{
+  animation: showAnimation 0.5s linear forwards;
+}
+
+.center nav.show .menuItem{
+  opacity: 1;
+  transition: all 0.5s 0.3s linear;
+}
+
+.center nav.hide:after{
+  animation: hideAnimation 0.5s linear forwards;
+  border-top-width: 3px;
+  border-bottom-width: 3px;
+}
+
+.center nav.hide .menuItem{
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+@keyframes hideAnimation{
+  0%{
+    width: 300px;
+  }
+  50%{
+    width: 50px;
+    height: 50px;
+  }
+  100%{
+    width: 50px;
+    height: 20px;
+  }
+}
+
+@keyframes showAnimation{
+  0%{
+    width: 50px;
+    height: 10px;
+  }
+  50%{
+    width: 50px;
+    height: 50px;
+  }
+  100%{
+    width: 300px;
+    height: 50px;
+  }
+}
