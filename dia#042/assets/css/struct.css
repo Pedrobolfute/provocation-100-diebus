@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #000;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-osx-font-smoothing: grayscale;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center{
+  background: linear-gradient(to top, rgb(0, 92, 128), black);
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+}
+
+.star{
+  position: absolute;
+  aspect-ratio: 1;
+  width: 1px;
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  animation: flicker ease infinite alternate;
+}
+
+.shooting-star{
+  position: absolute;
+  height: 4px;
+  border-radius: 5px;
+  aspect-ratio: 30/1;
+  background: linear-gradient(to left, rgb(255,255,255,1), rgb(255,255,255,0));
+  transform: translate(0, 20%);
+  left: -26%;
+  animation: fly ease infinite;
+}
+
+@keyframes flicker{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes fly{
+  from{
+    transform: translate(0, 0) rotate(20deg);
+  }
+  to{
+    transform: translate(500px, 160px) rotate(20deg);
+  }
+}
