@@ -1,0 +1,376 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #000;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #000;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  border-radius: 4px;
+  box-shadow: 1px 1px 10px #333;
+}
+
+.frame:hover .box{
+  animation-play-state: paused;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box{
+  border: 1px solid #fff;
+}
+
+.box-1{
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 191px;
+  top: 191px;
+  animation: rotate 3s ease-in-out 0.067s alternate infinite, borderradius 3s ease-in-out 0.067s infinite;
+}
+
+.box-2{
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  left: 187px;
+  top: 187px;
+  animation: rotate 3s ease-in-out 0.133s alternate infinite, borderradius 3s ease-in-out 0.133s infinite;
+}
+
+.box-3{
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  left: 183px;
+  top: 183px;
+  animation: rotate 3s ease-in-out 0.2s alternate infinite, borderradius 3s ease-in-out 0.2s infinite;
+}
+
+.box-4{
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 179px;
+  top: 179px;
+  animation: rotate 3s ease-in-out 0.266s alternate infinite, borderradius 3s ease-in-out 0.266s infinite;
+}
+
+.box-5{
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 175px;
+  top: 175px;
+  animation: rotate 3s ease-in-out 0.333s alternate infinite, borderradius 3s ease-in-out 0.333s infinite;
+}
+
+.box-6{
+  z-index: 1;
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  left: 171px;
+  top: 171px;
+  animation: rotate 3s ease-in-out 0.4s alternate infinite, borderradius 3s ease-in-out 0.4s infinite;
+}
+
+.box-7{
+  z-index: 1;
+  width: 66px;
+  height: 66px;
+  position: absolute;
+  left: 167px;
+  top: 167px;
+  animation: rotate 3s ease-in-out 0.466s alternate infinite, borderradius 3s ease-in-out 0.466s infinite;
+}
+
+.box-8{
+  z-index: 1;
+  width: 74px;
+  height: 74px;
+  position: absolute;
+  left: 163px;
+  top: 163px;
+  animation: rotate 3s ease-in-out 0.533s alternate infinite, borderradius 3s ease-in-out 0.533s infinite;
+}
+
+.box-9{
+  z-index: 1;
+  width: 82px;
+  height: 82px;
+  position: absolute;
+  left: 159px;
+  top: 159px;
+  animation: rotate 3s ease-in-out 0.6s alternate infinite, borderradius 3s ease-in-out 0.6s infinite;
+}
+
+.box-10{
+  z-index: 1;
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  left: 155px;
+  top: 155px;
+  animation: rotate 3s ease-in-out 0.666s alternate infinite, borderradius 3s ease-in-out 0.666s infinite;
+}
+
+.box-11{
+  z-index: 1;
+  width: 98px;
+  height: 98px;
+  position: absolute;
+  left: 151px;
+  top: 151px;
+  animation: rotate 3s ease-in-out 0.733s alternate infinite, borderradius 3s ease-in-out 0.733s infinite;
+}
+
+.box-12{
+  z-index: 1;
+  width: 106px;
+  height: 106px;
+  position: absolute;
+  left: 147px;
+  top: 147px;
+  animation: rotate 3s ease-in-out 0.8s alternate infinite, borderradius 3s ease-in-out 0.8s infinite;
+}
+
+.box-13{
+  z-index: 1;
+  width: 114px;
+  height: 114px;
+  position: absolute;
+  left: 143px;
+  top: 143px;
+  animation: rotate 3s ease-in-out 0.866s alternate infinite, borderradius 3s ease-in-out 0.866s infinite;
+}
+
+.box-14{
+  z-index: 1;
+  width: 122px;
+  height: 122px;
+  position: absolute;
+  left: 139px;
+  top: 139px;
+  animation: rotate 3s ease-in-out 0.933s alternate infinite, borderradius 3s ease-in-out 0.933s infinite;
+}
+
+.box-15{
+  z-index: 1;
+  width: 130px;
+  height: 130px;
+  position: absolute;
+  left: 135px;
+  top: 135px;
+  animation: rotate 3s ease-in-out 1s alternate infinite, borderradius 3s ease-in-out 1s infinite;
+}
+
+.box-16{
+  z-index: 1;
+  width: 138px;
+  height: 138px;
+  position: absolute;
+  left: 131px;
+  top: 131px;
+  animation: rotate 3s ease-in-out 1.066s alternate infinite, borderradius 3s ease-in-out 1.066s infinite;
+}
+
+.box-16{
+  z-index: 1;
+  width: 138px;
+  height: 138px;
+  position: absolute;
+  left: 131px;
+  top: 131px;
+  animation: rotate 3s ease-in-out 1.066s alternate infinite, borderradius 3s ease-in-out 1.066s infinite;
+}
+
+.box-17{
+  z-index: 1;
+  width: 146px;
+  height: 146px;
+  position: absolute;
+  left: 127px;
+  top: 127px;
+  animation: rotate 3s ease-in-out 1.133s alternate infinite, borderradius 3s ease-in-out 1.133s infinite;
+}
+
+.box-18{
+  z-index: 1;
+  width: 154px;
+  height: 154px;
+  position: absolute;
+  left: 123px;
+  top: 123px;
+  animation: rotate 3s ease-in-out 1.2s alternate infinite, borderradius 3s ease-in-out 1.2s infinite;
+}
+
+.box-19{
+  z-index: 1;
+  width: 162px;
+  height: 162px;
+  position: absolute;
+  left: 119px;
+  top: 119px;
+  animation: rotate 3s ease-in-out 1.266s alternate infinite, borderradius 3s ease-in-out 1.266s infinite;
+}
+
+.box-20{
+  z-index: 1;
+  width: 170px;
+  height: 170px;
+  position: absolute;
+  left: 115px;
+  top: 115px;
+  animation: rotate 3s ease-in-out 1.333s alternate infinite, borderradius 3s ease-in-out 1.333s infinite;
+}
+
+.box-21{
+  z-index: 1;
+  width: 178px;
+  height: 178px;
+  position: absolute;
+  left: 111px;
+  top: 111px;
+  animation: rotate 3s ease-in-out 1.4s alternate infinite, borderradius 3s ease-in-out 1.4s infinite;
+}
+
+.box-22{
+  z-index: 1;
+  width: 186px;
+  height: 186px;
+  position: absolute;
+  left: 107px;
+  top: 107px;
+  animation: rotate 3s ease-in-out 1.466s alternate infinite, borderradius 3s ease-in-out 1.466s infinite;
+}
+
+.box-23{
+  z-index: 1;
+  width: 194px;
+  height: 194px;
+  position: absolute;
+  left: 103px;
+  top: 103px;
+  animation: rotate 3s ease-in-out 1.533s alternate infinite, borderradius 3s ease-in-out 1.533s infinite;
+}
+
+.box-24{
+  z-index: 1;
+  width: 202px;
+  height: 202px;
+  position: absolute;
+  left: 99px;
+  top: 99px;
+  animation: rotate 3s ease-in-out 1.6s alternate infinite, borderradius 3s ease-in-out 1.6s infinite;
+}
+
+.box-25{
+  z-index: 1;
+  width: 210px;
+  height: 210px;
+  position: absolute;
+  left: 95px;
+  top: 95px;
+  animation: rotate 3s ease-in-out 1.666s alternate infinite, borderradius 3s ease-in-out 1.666s infinite;
+}
+
+.box-26{
+  z-index: 1;
+  width: 218px;
+  height: 218px;
+  position: absolute;
+  left: 91px;
+  top: 91px;
+  animation: rotate 3s ease-in-out 1.733s alternate infinite, borderradius 3s ease-in-out 1.733s infinite;
+}
+
+.box-27{
+  z-index: 1;
+  width: 226px;
+  height: 226px;
+  position: absolute;
+  left: 87px;
+  top: 87px;
+  animation: rotate 3s ease-in-out 1.8s alternate infinite, borderradius 3s ease-in-out 1.8s infinite;
+}
+
+.box-28{
+  z-index: 1;
+  width: 234px;
+  height: 234px;
+  position: absolute;
+  left: 83px;
+  top: 83px;
+  animation: rotate 3s ease-in-out 1.866s alternate infinite, borderradius 3s ease-in-out 1.866s infinite;
+}
+
+.box-29{
+  z-index: 1;
+  width: 242px;
+  height: 242px;
+  position: absolute;
+  left: 79px;
+  top: 79px;
+  animation: rotate 3s ease-in-out 1.933s alternate infinite, borderradius 3s ease-in-out 1.933s infinite;
+}
+
+.box-30{
+  z-index: 1;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  left: 75px;
+  top: 75px;
+  animation: rotate 3s ease-in-out 2s alternate infinite, borderradius 3s ease-in-out 2s infinite;
+}
+
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+    border-color: #ffffff;
+  }
+  25%{
+    border-color: blue;
+  }
+  75%{
+    border-color: green;
+  }
+  100%{
+    transform: rotate(720deg);
+    border-color: red;
+  }
+}
+@keyframes borderradius{
+  0%{
+    border-radius: 0px;
+  }
+  100%{
+    border-radius: 45%;
+  }
+}
