@@ -1,0 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: rgb(88, 88, 213);
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ringwrapper{
+  width: 100%;
+  height: 100%;
+  animation: ringwrap 4s alternate ease infinite;
+}
+
+@keyframes ringwrap{
+  to{
+    transform: rotate(0.75turn);
+  }
+}
+
+.ring{
+  position: absolute;
+  transform: rotate(var(--rotateby));
+  animation: ringani 4s alternate infinite ease-in-out;
+  
+}
+
+@keyframes ringani{
+  to{
+    transform: scale(var(--maxscale)) rotate(var(--rotateby));
+  }
+}
+
+.dot{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #d0eff0;
+  border-radius: 50%;
+}
