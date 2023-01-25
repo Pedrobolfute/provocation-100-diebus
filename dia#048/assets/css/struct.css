@@ -1,0 +1,89 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #0e176cb8;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #0e176c;
+  color: #fff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-osx-font-smoothing: grayscale;
+}
+
+.center{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 100px;
+  left: 100px;
+  perspective: 1000px;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px) rotateX(70deg) rotate(-45deg);
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.cube:hover{
+  transform: translateZ(-100px) rotateX(-120deg) rotate(135deg);
+}
+
+.cube .cube, .cube .side{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  font-weight: 800;
+}
+
+.cube .front{
+  transform: rotateY(0deg) translateZ(100px);
+  background: white;
+}
+
+.cube .back{
+  transform: rotateX(180deg) translateZ(100px);
+  background: #ccc;
+}
+
+.cube .right{
+  transform: rotateY(90deg) translateZ(100px);
+  background: #ddd;
+}
+
+.cube .left{
+  transform: rotateY(-90deg) translateZ(100px);
+  background: #eee;
+}
+
+.cube .top{
+  transform: rotateX(90deg) translateZ(100px);
+  background: #eee;
+}
+
+.cube .bottom{
+  transform: rotateX(-90deg) translateZ(100px);
+  background: #ddd;
+}
+
