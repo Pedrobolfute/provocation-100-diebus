@@ -1,0 +1,93 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgba(0, 0, 0, 0.809);
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.3);
+  overflow: hidden;
+  background: #2d36d2;
+  color: #fff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-osx-font-smoothing: grayscale;
+}
+
+.content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #343878;
+}
+
+.input-group{
+  width: 80%;
+  height: 2.5rem;
+  border-radius: 0.15rem;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.75rem;
+  box-shadow: 0 5px 20px -10px #000;
+}
+
+input[type="range"]{
+  -webkit-appearance: none;
+  display: inline-block;
+  width: 100%;
+  height: 0.2rem;
+  border: none;
+  border-radius: 1rem;
+  background: #eb9292;
+  background: linear-gradient(95deg, rgba(235, 146, 1) 0%, rgba(255, 0, 0, 1) 100%);
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: white url(https://100dayscss.com/codepen/slider-thumb.png) center center no-repeat;
+  background-size: 50% 50%;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0 0 0 0.125rem #4ecd5d;
+}
+
+input[type="range"]::-moz-range-thumb{
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: white url(https://100dayscss.com/codepen/slider-thumb.png) center center no-repeat;
+  background-size: 50% 50%;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0 0 0 0.125rem #4ecd5d;
+}
+
+input[type="range"]::-ms-thumb{
+  -webkit-appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: white url(https://100dayscss.com/codepen/slider-thumb.png) center center no-repeat;
+  background-size: 50% 50%;
+  border-radius: 2rem;
+  border: none;
+  box-shadow: 0 0 0 0.125rem #4ecd5d;
+}
