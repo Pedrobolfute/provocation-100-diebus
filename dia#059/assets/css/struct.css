@@ -1,0 +1,98 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: antiquewhite;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px rgba(0,0,0,0.5);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;;
+  -webkit-font-smoothing: antialiased;
+  -webkit-osx-font-smoothing: grayscale;
+}
+
+.center{
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: url(https://100dayscss.com/codepen/slice-image-1.jpg) center center no-repeat;
+  cursor: pointer;
+  background-size: 400px 400px;
+}
+
+.text{
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  bottom: 50px;
+  right: 50px;
+  border-radius: 15px;
+  background: rgba(0,0,0,0.6);
+  overflow: hidden;
+  transition: all 1s ease-in;
+}
+
+.text h1{
+  position: absolute;
+  top: 10px;
+  margin: 20px;
+  font-size: 24px;
+  letter-spacing: 3px;
+  color: #f1f1f1;
+  transition: all 1s ease-in;
+}
+
+.text h2{
+  position: absolute;
+  font-size: 18px;
+  bottom: 20px;
+  right: 20px;
+  letter-spacing: 1px;
+  color: #f1f1f1;
+  margin: auto;
+  transition: all 1s ease-in;
+}
+
+.center:hover .text h1{
+  transform: translate(-100px);
+  transition: all 1s ease-out;
+}
+
+.center:hover .text h2{
+  transform: translate(100px);
+  transition: all 1s ease-out;
+}
+
+.center:hover .text{
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+.slice{
+  position: relative;
+  z-index: 2;
+  float: left;
+  box-sizing: border-box;
+  width: 50px;
+  height: 400px;
+  background: url(https://100dayscss.com/codepen/slice-image-2.jpg) center center no-repeat;
+  background-size: 400px 400px;
+  transition: all 1s ease-in-out;
+  opacity: 0;
+}
+
+.center:hover .slice{
+  transform: translateY(0);
+  opacity: 1;
+}
