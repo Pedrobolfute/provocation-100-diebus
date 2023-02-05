@@ -1,0 +1,31 @@
+body{
+  background-color:#34495e;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 4px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background-color: #34495e;
+  color: #fff;
+  filter: blur(0px);
+  font-size: 60px;
+  display: flex;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+.orange{
+  width: 100%;
+  height: 50%;
+  background-color: orange;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  line-height: 400px;
+}
