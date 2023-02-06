@@ -1,0 +1,48 @@
+body{
+  background-color: #267aac;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+span{
+  height: 400px;
+  width: 400px;
+  position: relative;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+  overflow: hidden;
+  background: #333;
+  color: #fff;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+span div{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.a{
+  background: linear-gradient(-45deg, #77c8c0, #267aac);
+}
+
+.b{
+  opacity: 0;
+  z-index: 10;
+  background: linear-gradient(-45deg, #4ad7b8, #f39c12);
+  animation: gradient 4s ease-in-out infinite;
+}
+
+@keyframes gradient{
+  0%, 100%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 1;
+  }
+}
