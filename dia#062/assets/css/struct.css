@@ -1,0 +1,179 @@
+:root{
+  --primary-color: #7dd0ed;
+  --primary-color-onHover:#27A6D2;
+  --progress-background: #E9EDEF;
+  --description-color: #5E5E5E;
+  --font-family: "Open Sans", Helvetica, sans-serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+body
+{
+  background-color: beige;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--progress-background);
+  width:450px;
+  height: 400px;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px 0.2px rgba(0, 0, 0, 0.10);
+}
+
+#card_container .price_cards_container
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 20px 15px 20px;
+ width:100%;
+
+}
+#card_container .price_cards_container .Price_Card
+{
+  height: 165px;
+  width: 31%;
+  background: white;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+.price_title
+{
+  background: var(--primary-color);
+  color: white;
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  transition: all 0.3s ease-in-out;
+}
+.card_Basic:hover, .card_Pro:hover, .card_Premium:hover
+{
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  transform: scale(1.1);
+  
+}
+.card_Basic:hover .price_title, .card_Pro:hover .price_title, .card_Premium:hover .price_title
+{
+  background: var(--primary-color-onHover) !important;
+  
+}
+.card_Basic:hover .price, .card_Pro:hover .price, .card_Premium:hover .price
+{
+  color: var(--primary-color-onHover) !important;
+}
+.Progress0, .Progress1, .Progress2
+{
+  border-radius: 30px;
+  width: 0px;
+  height: 10px;
+  background: var(--primary-color);
+  transition: all 0.3s ease-in-out;
+}
+.price
+{
+  font-weight: 700;
+  font-size: 30px !important;
+  transition: all 0.3s ease-in-out;
+}
+.grayLines_container
+{
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.grayLines_container>div:nth-child(1){
+  margin: 12px 0;
+  font-size: 18px;
+  color: var(--description-color);
+}
+.grayLines_container>div:nth-child(1)>p{
+  color: var(--description-color);
+  font-size: 14px;
+}
+.grayLines_container>div:nth-child(2){
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 45px;
+  width: 100%;
+}
+.medium_line,.long_line,.lowMedium_line,.small_line
+{
+  height: 3px;
+  text-align: center;
+  background: var(--progress-background);
+}
+
+.long_line{
+  width: 60%;
+} 
+.lowMedium_line{
+  width: 50%;
+}
+.medium_line{
+  width: 58%;
+}
+
+.small_line{
+  width: 40%;
+}
+
+
+.progresses_container
+{
+  text-align: center;
+  width:96%;
+  height: 160px;
+  background: white;
+  padding: 20px;
+  margin: 0px 10px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.progress_container{
+  width: 100%;
+  color: var(--description-color);
+  font-weight: 500;
+  line-height: 20px;
+}
+.Progress_titles
+{
+  width: 100%;
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grayProgress_container
+{
+  width: 100%;
+  border-radius: 30px;
+  background: var(--progress-background);
+  height: 10px;
+  margin: 5px 0 0 0;
+}
