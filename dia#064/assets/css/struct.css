@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color:#333;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #2c3e50;
+  color: #333;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-osx-font-smoothing: grayscale;
+}
+
+.center, .center2{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 72px;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+}
+
+.center{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2c3e50;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.center2{
+  transform: translate(-43.5%, -34%);
+  background: #8c43ab;
+}
+
+.sup:hover .center{
+  color: white;
+  background: #8C43AB;
+  transform: translate(-43%, -35%);
+}
+
+.sup:hover .center2{
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
