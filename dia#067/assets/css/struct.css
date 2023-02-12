@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #AB9038;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 4px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #F5CE51;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-osx-font-smoothing: grayscale;
+}
+
+.parasol{
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 8%;
+  top: 10%;
+  transform-style: preserve-3d;
+  transform: rotateX(80deg) rotateY(-10deg);
+}
+
+.parasol-wheel{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation-name: parasol-rotate;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.parasol-triangle{
+  width: 24%;
+  height: 50%;
+  position: absolute;
+  left: 38%;
+  top: 0;
+  transform-origin: 50% 100%;
+  transform: rotateZ(var(--r, 0)) rotateX(30deg) translateY(1%);
+  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  background-color: #ffffff;
+}
+
+.parasol-triangle:nth-of-type(2n){
+  background: #D70606;
+}
+
+.parasol-wheel-shadow{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-origin: 50% 50%;
+  transform: translateY(-50%) rotateX(90deg) translateY(-100%) rotateX(-60deg) rotateZ(18deg) translateX(78%) rotateY(180deg);
+}
+
+.parasol-wheel-shadow-rotate{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-origin: 50% 50%;
+  animation-name: parasol-rotate;
+  animation-duration: 5000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.parasol-triangle-shadow{
+  width: 24%;
+  height: 50%;
+  position: absolute;
+  left: 38%;
+  top: 0;
+  transform-origin: 50% 100%;
+  transform: rotateZ(var(--r, 0)) rotateX(30deg) translateY(1%);
+  -webkit-clip-path: polygon(50% 100%, 0 0, 100% 0);
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+  background: #AB9038;
+}
+
+.parasol-pole{
+  width: 4%;
+  height: 85%;
+  position: absolute;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -50%) rotateX(90deg) translateY(-10%);
+  background: #888;
+}
+
+.parasol-pole-shadow{
+  width: 4%;
+  height: 85%;
+  position: absolute;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: translate(-50%, -50%) rotateX(90deg) translateY(-108%) rotateZ(85deg) rotateX(-50deg);
+  background: #AB9038;
+}
+
+@keyframes parasol-rotate{
+  from{
+    transform: 0;
+  }
+  to{
+    transform: rotateZ(360deg);
+  }
+}
