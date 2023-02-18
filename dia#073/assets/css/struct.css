@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: #1a237e;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.2);
+  border: 5px solid #fff;
+  border-radius: 60px 0;
+  overflow: hidden;
+  background: #1a237e;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  display: flex;
+  gap: 10px;
+}
+
+h1{
+  white-space: nowrap;
+}
+
+.text-box{
+  display: inline-block;
+  overflow: hidden;
+  height: 40px;
+  vertical-align: middle;
+}
+
+span{
+  display: block;
+  height: 40px;
+  animation: rotateWord 8s ease-in-out infinite;
+}
+
+@keyframes rotateWord{
+  0%, 15%{
+    transform: translateY(-9%);
+  }
+  20%, 35%{
+    transform: translateY(-109%);
+  }
+  40%,55%{
+    transform: translateY(-209%);
+  }
+  60%,75%{
+    transform: translateY(-309%);
+  }
+  80%, 95%{
+    transform: translateY(-409%);
+  }
+}
