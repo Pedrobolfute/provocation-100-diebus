@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  margin: 0;
+  background-color: #124182;
+}
+
+.container{
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  border-radius: 4px;
+  background-color: #1d3557;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 1.2rem;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+.input-group{
+  position: relative;
+}
+
+input[type="radio"]{
+  display: none;
+}
+
+label{
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 99;
+  color: #ffffff;
+  display: grid;
+  place-content: center;
+  transition: background-color 0.5s ease;
+}
+
+label:hover{
+  background-color: rgba(0, 0, 0, 0.263);
+}
+
+.active{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.4s ease-in-out;
+  z-index: 10;
+  border: 1px solid #ffffff;
+}
+
+input:checked ~ .active{
+  transform: translate(-50%, -50%) scale(1);
+}
+
+input:checked ~ label{
+  position: relative;
+  color: #1d3557;
+  background-color: rgb(255, 255, 255);
+  z-index: 20;
+}
