@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: #a13333ac;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #a13333;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center{
+  position: absolute;
+  top: 100px;
+  left: 100px;
+  width: 200px;
+  height: 200px;
+  transform-style: preserve-3d;
+  animation: ring-animation 7s ease-in-out infinite;
+}
+
+.ring{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.3;
+}
+
+.r1{
+  transform: rotateX(0deg);
+}
+
+.r2{
+  transform: rotateX(30deg);
+}
+
+.r3{
+  transform: rotateX(60deg);
+}
+
+.r4{
+  transform: rotateX(90deg);
+}
+
+.r5{
+  transform: rotateX(120deg);
+}
+
+.r6{
+  transform: rotateX(150deg);
+}
+
+@keyframes ring-animation{
+  0%{
+    transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg);
+  }
+  25%{
+    transform: rotateY(45deg) rotateX(180deg) rotateZ(20deg);
+  }
+  50%{
+    transform: rotateY(225deg) rotateX(0deg) rotateZ(90deg);
+  }
+
+  75%{
+    transform: rotateY(0deg) rotateX(45deg) rotateZ(120deg);
+  }
+  100%{
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+  }
+}
