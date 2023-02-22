@@ -1,0 +1,84 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+body{
+  background-color: purple;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+  overflow: hidden;
+  background: #fff;
+  color: #333;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  background-color: hsl(280, 50%, 55%);
+  border-radius: 10px;
+}
+
+.center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.track{
+  width: 90%;
+}
+
+.ball{
+  position: relative;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+
+  animation: 1s slide ease-in-out alternate infinite;
+}
+
+@keyframes slide{
+  from {
+    left: 0%;
+    transform: translateX(0);
+  }
+  to{
+    left: 100%;
+    transform: translateX(-100%);
+  }
+}
+
+.blur{
+  position: absolute;
+  opacity: 0.3;
+  --delay: 0.015s
+}
+
+.blur-1{
+  animation-delay: calc(1 * var(--delay));
+}
+
+.blur-2{
+  animation-delay: calc(2 * var(--delay));
+}
+
+.blur-3{
+  animation-delay: calc(3 * var(--delay));
+}
+
+.blur-4{
+  animation-delay: calc(4 * var(--delay));
+}
+
+.blur-5{
+  animation-delay: calc(5 * var(--delay));
+}
