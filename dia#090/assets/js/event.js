@@ -1,67 +1,63 @@
-const frame = document.createElement('div');
-frame.classList.add('frame');
-document.body.appendChild(frame);
+// HTML block
+let trigger_list_html = Array.from({ length: 380 }).reduce((p, c, index) => {
+	return p + `<div class="trigger tigger-${index}" data-index=${index}></div>`
+}, "")
+let line_list_html = Array.from({ length: 19 }).reduce((p, c, index) => {
+	return p + `<div class="line line-${index}"><div class="left"></div><div class="right"></div></div>`
+}, "")
+let html = `${trigger_list_html}<div id="lines">${line_list_html}</div>`
+space.insertAdjacentHTML("afterend", html)
 
-for(let i = 1; i <= 400; i++){
-const trigger = document.createElement('div');
-trigger.classList.add(`trigger-${i}`);
-frame.appendChild(trigger);
-}
+// CSS block
+const rows = 19 // sync with html
+const columns = 20 // sync with html
+const base_cache = {}
+const cache = new Proxy(base_cache, {
+	get(target, key, reciver) {
+		if(!target[key]) {
+			target[key] = lines.querySelector(key) || { style: {} }
+		}
+		return target[key]
+	}
+})
+frame.querySelectorAll('.trigger').forEach(trigger => {
+	trigger.addEventListener('mouseenter', ({ target }) => {
+		const index = target.dataset.index
+		const column = index % 20 + 1
+		const row = ~~(index / 20)
+		let scale = (column - 3) / 10
+		cache[`.line-${row}>.left`].style.transform = `scaleX(${scale})`
+		scale = (columns - (column + 2)) / 10
+		cache[`.line-${row}>.right`].style.transform = `scaleX(${scale})`
 
-for(let i = 1; i <= 20; i++){
-const lines = document.createElement('div');
-lines.classList.add(`lines`, `line-${i}`);
-frame.appendChild(lines);
+		scale = (column - 2) / 10
+		cache[`.line-${row - 1}>.left`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row + 1}>.left`].style.transform = `scaleX(${scale})`
+		scale = (columns - (column + 1)) / 10
+		cache[`.line-${row - 1}>.right`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row + 1}>.right`].style.transform = `scaleX(${scale})`
 
-const left = document.createElement('div');
-left.classList.add('left');
-lines.appendChild(left);
+		scale = (column - 1) / 10
+		cache[`.line-${row - 2}>.left`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row + 2}>.left`].style.transform = `scaleX(${scale})`
+		scale = (columns - column) / 10
+		cache[`.line-${row - 2}>.right`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row + 2}>.right`].style.transform = `scaleX(${scale})`
+	})
 
-const right = document.createElement('div');
-right.classList.add('right');
-lines.appendChild(right);
-}
-
-let rows = 20;
-let columns = 20;
-let row = 1;
-let column = 1;
-
-for (let i = 1; i <= (rows * columns); i++){
-  if((row * columns) < i){
-    row = row + 1;
-  }
-  columns = i - ((row - 1) * columns)
-
-  trigger.addEventListener('mouseover', () => {
-    document.body.style.backgroundColor = 'black';
-  });
-  trigger.addEventListener('mouseout', () => {
-    document.body.style.backgroundColor = '';
-  });
-
-}
-
-// Link: https://codepen.io/rodes/pen/bGMYBLQ?editors=0100
-//ex de jquery...
-$("p").hover(function(){
-  $(this).css("background-color", "yellow");
-  }, function(){
-  $(this).css("background-color", "pink");
-});
-
-//ex: js vanilla
-element.addEventListener('mouseover', () => {
-      document.body.style.backgroundColor = 'black';
-});
-
-const elements = document.querySelectorAll('.minha-classe');
-
-//for each
-elements.forEach((element) => {
-  element.addEventListener('mouseover', () => {
-    if (element.classList.contains('minha-classe:hover')) {
-      // Faça algo aqui quando o elemento estiver em estado de hover
-    }
-  });
-});
+	trigger.addEventListener('mouseleave', ({ target }) => {
+		const column = target.dataset.index
+		const row = ~~(column / 20)
+		let scale = 0
+		cache[`.line-${row}>.left`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row}>.right`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row - 1}>.left`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row + 1}>.left`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row - 1}>.right`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row + 1}>.right`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row - 2}>.left`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row + 2}>.left`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row - 2}>.right`].style.transform = `scaleX(${scale})`
+		cache[`.line-${row + 2}>.right`].style.transform = `scaleX(${scale})`
+	})
+})
