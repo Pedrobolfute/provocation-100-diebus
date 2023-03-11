@@ -1,0 +1,132 @@
+body{
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #603813ea;
+}
+
+section{
+  height: 400px;
+  width: 400px;
+  background: #e0f0e5;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+section > span{
+  position: absolute;
+  height: 5px;
+  width: 100px;
+  background-color: #b9d6c2;
+  border-radius: 5px;
+  top: 300px;
+  left: 150px;
+  animation: scaleX .7s ease-in-out both;
+}
+
+#tree{
+  position: absolute;
+  height: 200px;
+  width: 100px;
+  top: 100px;
+  left: 150px;
+  overflow: hidden;
+  transform-origin: 0% 100%;
+  animation: scaleY .7s ease-in-out both;
+}
+
+#tree #log, #tree span{
+  background: #e8c87e;
+  border-radius: 4px;
+  width: 4px;
+}
+
+#tree #log{
+  position: absolute;
+  height: 100%;
+  left: 48px;
+  top: 2px;
+}
+
+#tree span:nth-child(2){
+  position: absolute;
+  height: 60px;
+  width: 4px;
+  transform: rotate(-40deg);
+  left: 30px;
+  top: 100px;
+}
+
+#tree span:nth-child(3){
+  position: absolute;
+  height: 50px;
+  width: 4px;
+  transform: rotate(40deg);
+  left: 64px;
+  top: 80px;
+}
+
+#tree span:nth-child(4){
+  position: absolute;
+  height: 40px;
+  width: 4px;
+  transform: rotate(-40deg);
+  left: 35px;
+  top: 55px;
+}
+
+#tree span:nth-child(5){
+  position: absolute;
+  height: 30px;
+  width: 4px;
+  transform: rotate(40deg);
+  left: 57px;
+  top: 30px;
+}
+
+#tree span:nth-child(6){
+  position: absolute;
+  height: 18px;
+  width: 4px;
+  transform: rotate(-40deg);
+  left: 43px;
+  top: 10px;
+}
+
+#left, #right{
+  position: absolute;
+  height: 195px;
+  width: 70px;
+  background: #603813;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+  left: 131px;
+  top: 65px;
+  transform-origin: right;
+  animation: scaleX 1s ease-in-out .7s both;
+}
+
+#right{
+  transform-origin: left;
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+  left: 200px;
+  background: #e84624;
+}
+
+@keyframes scaleX{
+  0%{
+    transform: scaleX(0);
+  }
+  60%{
+    transform: scaleX(1.1);
+  }
+  80%{
+    transform: scaleX(0.95);
+  }
+  100%{
+    transform: scaleX(1);
+  }
+}
