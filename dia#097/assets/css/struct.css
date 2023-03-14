@@ -1,0 +1,166 @@
+body{
+  background-color: #8d44adae;
+}
+
+.frame{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+  overflow: hidden;
+  background: #8e44ad;
+  color: #fff;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothig: grayscale;
+}
+
+.puppet{
+  position: absolute;
+  top: 90px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.puppet .head{
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px auto;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.puppet .body{
+  position: relative;
+  height: 100px;
+  width: 50px;
+  background: #fff;
+}
+
+.puppet .body .arm{
+  position: absolute;
+  top: 0;
+}
+
+.puppet .body .arm-left{
+  left: -10px;
+}
+
+.puppet .body .arm-left .upper{
+  transform: rotate(10deg);
+}
+
+.puppet .body .arm-left .upper .lower{
+  transform: rotate(1deg);
+}
+
+.puppet .body .arm-right{
+  right: -10px;
+}
+
+.puppet .body .arm-right .upper{
+  transform: rotate(-75deg);
+  -webkit-animation: upper 1s ease-in-out infinite alternate;
+          animation: upper 1s ease-in-out infinite alternate;
+}
+
+.puppet .body .arm-right .upper .lower{
+  transform: rotate(-75deg);
+  -webkit-animation: lower 1s ease-in-out infinite alternate;
+          animation: lower 1s ease-in-out infinite alternate;
+}
+
+.puppet .body .arm .upper{
+  position: relative;
+  height: 50px;
+  width: 16px;
+  background: #fff;
+  border-radius: 8px;
+  transform-origin: 8px 8px;
+}
+
+.puppet .body .arm .upper .lower{
+  position: absolute;
+  height: 52px;
+  width: 16px;
+  bottom: -36px;
+  left: 0;
+  background: #fff;
+  border-radius: 8px;
+  transform-origin: 8px 8px;
+}
+
+.puppet .body .leg{
+  position: absolute;
+  top: 78px;
+}
+
+.puppet .body .leg-left{
+  left: 0px;
+}
+
+.puppet .body .leg-right{
+  right: 0px;
+}
+
+.puppet .body .leg .upper{
+  position: relative;
+  height: 70px;
+  width: 24px;
+  background: #fff;
+  border-radius: 12px;
+  transform-origin: 12px 12px;
+}
+
+.puppet .body .leg .upper .lower{
+  position: absolute;
+  height: 70px;
+  width: 24px;
+  bottom: -46px;
+  left: 0;
+  background: #fff;
+  border-radius: 12px;
+  transform-origin: 12px 12px;
+}
+
+@-webkit-keyframes upper{
+  0%{
+    transform: rotate(-70deg);
+  }
+  100%{
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes upper{
+  0%{
+    transform: rotate(-70deg);
+  }
+  100%{
+    transform: rotate(-90deg);
+  }
+}
+
+@-webkit-keyframes lower{
+  0%{
+    transform: rotate(-75deg);
+  }
+  100%{
+    transform: rotate(-100deg);
+  }
+}
+
+@keyframes lower{
+  0%{
+    transform: rotate(-75deg);
+  }
+  100%{
+    transform: rotate(-100deg);
+  }
+}
